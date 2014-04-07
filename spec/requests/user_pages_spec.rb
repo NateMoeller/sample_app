@@ -116,7 +116,7 @@ describe "User pages" do
       sign_in user
       visit edit_user_path(user)
     end
-
+	
     describe "page" do
       it { should have_content("Update your profile") }
       it { should have_title("Edit user") }
