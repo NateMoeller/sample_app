@@ -62,6 +62,9 @@ describe "User pages" do
 	let!(:m1) { FactoryGirl.create(:micropost, user: user, content: "Foo") }
     let!(:m2) { FactoryGirl.create(:micropost, user: user, content: "Bar") }
 	
+	
+	let(:user2) { FactoryGirl.create(:user) }
+	let!(:m3) { FactoryGirl.create(:micropost, user: user2, content: "Cant delete") }
     before { visit user_path(user) }
 
     it { should have_content(user.name) }
