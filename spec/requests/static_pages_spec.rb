@@ -33,8 +33,12 @@ describe "Static pages" do
           end
         end
  	  
- 	  it "should have micropost count and pluralize" do
-         page.should have_content('31 microposts')
+ 	    it "should have micropost count and pluralize" do
+          page.should have_content('31 microposts')
+        end
+		
+		it "should paginate after 31" do
+          page.should have_selector('div.pagination')
         end
       end
   end
